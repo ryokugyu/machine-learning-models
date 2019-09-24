@@ -1,0 +1,17 @@
+name: 'Commit push time'
+description: 'Commits has been pushed succesfuly at this time'
+inputs:
+  commit-name:
+    description: 'Who to greet'
+    required: true
+    default: 'Commits are pushed'
+
+outputs:
+  time: 
+    description: 'The time you pushed the messages'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.commit-name }}
